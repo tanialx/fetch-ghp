@@ -12,9 +12,10 @@ async function run() {
     // paginate: receive all results across all pages
     const user = gh.context.repo.owner
     console.log(`Fetch repos owned by user ${user}`)
-    octokit.paginate("GET /users/{owner}/repos?type={type}", {
+    octokit.paginate("GET /users/{owner}/repos", {
         owner: user,
-        type: "owner"
+        type: "owner",
+        per_page: 100
     }).then((repos) => {
         console.log(`Found ${repos.length} repos`)
         const repos_with_page = repos.filter(value => value.has_pages).map(value => {
