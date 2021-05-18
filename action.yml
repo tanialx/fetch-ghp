@@ -1,0 +1,12 @@
+name: 'fetch-ghp'
+description: 'Fetch repos with github-pages of user'
+inputs:
+  token:
+    description: 'token with read_repos permission'
+    required: true
+outputs:
+  ghp:
+    description: 'json output (list of repos with pages)'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
