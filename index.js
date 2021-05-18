@@ -24,6 +24,6 @@ async function run() {
                 description: value.description
             }
         })
-        core.setOutput('ghp', repos_with_page)
+        core.setOutput('ghp', JSON.stringify(repos_with_page))
     });
 }

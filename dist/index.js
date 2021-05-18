@@ -6127,7 +6127,7 @@ async function run() {
                 description: value.description
             }
         })
-        _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('ghp', repos_with_page)
+        _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('ghp', JSON.stringify(repos_with_page))
     });
 }
 })();
