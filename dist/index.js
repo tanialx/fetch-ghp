@@ -6120,14 +6120,18 @@ async function run() {
         type: "owner"
     }).then((repos) => {
         console.log(`Found ${repos.length} repos`)
-        let repos_with_page = repos.filter(value => value.has_pages).map(value => {
+        const repos_with_page = repos.filter(value => value.has_pages).map(value => {
             return {
                 name: value.name,
                 has_pages: true,
                 description: value.description
             }
         })
-        _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('ghp', JSON.stringify(repos_with_page))
+        const out = {
+            user: user,
+            data: repos_with_page
+        }
+        _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput('ghp', JSON.stringify(out))
     });
 }
 })();
