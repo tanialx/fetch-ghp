@@ -6110,10 +6110,10 @@ async function run() {
 
     const token = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput('token')
 
-    const octokit = _actions_github__WEBPACK_IMPORTED_MODULE_1__.gh.getOctokit(token)
+    const octokit = _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(token)
 
     // paginate: receive all results across all pages
-    const user = _actions_github__WEBPACK_IMPORTED_MODULE_1__.gh.context.repo.owner
+    const user = _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo.owner
     console.log(`Fetch repos owned by user ${user}`)
     octokit.paginate("GET /users/{owner}/repos?type={type}", {
         owner: user,

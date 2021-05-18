@@ -1,5 +1,5 @@
 import * as core from '@actions/core'
-import { gh } from '@actions/github'
+import * as gh from '@actions/github'
 
 run().catch(error => core.setFailed(error.message))
 
